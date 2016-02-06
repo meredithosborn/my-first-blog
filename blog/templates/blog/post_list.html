@@ -6,16 +6,12 @@
 		<div>
 		<h1><a href="http://djangogirls.org">Meredith's Coding Blog</a></h1>
 		</div>
-
-		<div>
-			<p>published:02:06:2015
-			<h2><a href=""> My first post</a></h2>
-			<p>Everything is awesome when you're part of the team!</p>
-			</div>
-		<div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p><strong>It works!</p></strong>
-        </div>
+			{% for post in posts %}
+    		<div>
+    		<p>published: {{ post.published_date }}</p>
+        	<h1><a href="">{{ post.title }}</a></h1>
+        	<p>{{ post.text|linebreaks }}</p>
+    	</div>
+    	{% endfor %}
 	</body>
 </html>
